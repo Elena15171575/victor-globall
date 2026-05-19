@@ -1,0 +1,44 @@
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
+
+DirectoryIndex page74343055.html
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/project24321036/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^main$ page74343055.html [NC]
+RewriteRule ^main/$ page74343055.html [NC]
+
+RewriteRule ^art$ page74343059.html [NC]
+RewriteRule ^art/$ page74343059.html [NC]
+
+RewriteRule ^collab$ page74343065.html [NC]
+RewriteRule ^collab/$ page74343065.html [NC]
+
+RewriteRule ^about$ page74343071.html [NC]
+RewriteRule ^about/$ page74343071.html [NC]
+
+RewriteRule ^gallery$ page74343073.html [NC]
+RewriteRule ^gallery/$ page74343073.html [NC]
+
+RewriteRule ^education$ page74343041.html [NC]
+RewriteRule ^education/$ page74343041.html [NC]
+
+RewriteRule ^contacts$ page74343089.html [NC]
+RewriteRule ^contacts/$ page74343089.html [NC]
+
+RewriteRule ^cookie$ page74343043.html [NC]
+RewriteRule ^cookie/$ page74343043.html [NC]
+
+RewriteRule ^oferta$ page74343051.html [NC]
+RewriteRule ^oferta/$ page74343051.html [NC]
+
+RewriteRule ^error$ page74343095.html [NC]
+RewriteRule ^error/$ page74343095.html [NC]
+
+RewriteRule ^production$ page104185896.html [NC]
+RewriteRule ^production/$ page104185896.html [NC]
+
+
