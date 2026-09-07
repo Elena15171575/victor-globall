@@ -60,18 +60,19 @@
         }
         .btn-main {
             display: inline-block;
-            border: 1px solid #ffffff;
+            background-color: #e50914; /* Красный цвет кнопки */
             color: #ffffff;
             text-decoration: none;
             padding: 14px 36px;
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
         }
         .btn-main:hover {
-            background-color: #ffffff;
-            color: #0b0c0d;
+            background-color: #b80710; /* Темно-красный при наведении */
         }
         .btn-secondary {
             color: #888888;
@@ -80,6 +81,7 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             transition: color 0.3s ease;
+            margin-top: 8px;
         }
         .btn-secondary:hover {
             color: #ffffff;
@@ -95,10 +97,10 @@
         <p>Искусство требует точных путей. Эта страница не существует, была перенесена или в её адресе закралась ошибка.</p>
         
         <div class="nav-links">
-            <!-- Ссылка на главную -->
-            <a href="./" class="btn-main">Вернуться на главную</a>
-            <!-- Ссылка на раздел контактов -->
-            <a href="contacts.html" class="btn-secondary">Контакты</a>
+            <!-- Ссылка ведет строго на главную страницу вашего проекта -->
+            <a href="/victor-globall/" class="btn-main">Вернуться на главную</a>
+            <!-- Ссылка на раздел контактов внутри вашего проекта -->
+            <a href="/victor-globall/contacts.html" class="btn-secondary">Контакты</a>
         </div>
     </div>
 
