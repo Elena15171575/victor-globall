@@ -5,16 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Сollab | VG WEB SITE</title>
-    <meta property="og:url" content="collab" />
-    <meta property="og:title" content="Сollab" />
-    <meta property="og:description" content="" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="images/tild3939-6138-4565-b831-313964303039__vg_logo.png" />
-    <link rel="canonical" href="collab">
-    <meta name="format-detection" content="telephone=no" />
     <link rel="shortcut icon" href="images/tildafavicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/tilda-grid-3.0.min.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="css/fonts-tildasans.css" type="text/css" media="all" />
 </head>
 <body class="t-body" style="margin:0; background-color: #000000;">
 
@@ -94,22 +86,10 @@
                 box-sizing: border-box;
             }
 
-            .collab-photo-placeholder {
-                width: 100%;
-                height: 120px;
-                background-color: #050505; 
-                border: 1px dashed #333333;
-                border-radius: 4px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #444444;
-                font-family: sans-serif;
-                font-size: 11px;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                transition: all 0.4s ease;
-                margin-bottom: 20px;
+            .collab-card:hover {
+                transform: translateY(-8px); 
+                border-color: #e50914; 
+                box-shadow: 0 10px 25px rgba(229, 9, 20, 0.15); 
             }
 
             .collab-title {
@@ -123,7 +103,10 @@
                 transition: color 0.4s ease;
             }
 
-            /* Контейнер для вращающейся розы изначального вида */
+            .collab-card:hover .collab-title {
+                color: #ff2e3b; 
+            }
+
             .collab-rose-svg {
                 width: 32px;
                 height: 32px;
@@ -132,65 +115,59 @@
                 transition: opacity 0.4s ease, transform 0.4s ease;
             }
 
-            /* Эффекты при наведении */
-            .collab-card:hover {
-                transform: translateY(-8px); 
-                border-color: #e50914; 
-                box-shadow: 0 10px 25px rgba(229, 9, 20, 0.15); 
-            }
-
-            .collab-card:hover .collab-photo-placeholder {
-                border-color: rgba(229, 9, 20, 0.4);
-                color: #e50914;
-            }
-
-            .collab-card:hover .collab-title {
-                color: #ff2e3b; 
-            }
-
-            /* Роза плавно появляется и начинает бесконечно крутиться по кругу */
             .collab-card:hover .collab-rose-svg {
                 opacity: 1; 
                 transform: translateY(0) scale(1);
                 animation: card-rose-spin 12s linear infinite;
             }
+
+            .collab-img {
+                width: 100%; 
+                height: 120px; 
+                object-fit: cover; 
+                border-radius: 4px; 
+                margin-bottom: 20px;
+                border: 1px dashed #333333;
+            }
         </style>
 
-        <!-- МАКЕТ СЕТКИ С ВЕКТОРНЫМИ РОЗАМИ ВНУТРИ -->
         <div class="collab-grid">
             
-            <!-- Шаблон макроса для SVG розы, встроенный во все 16 карточек -->
-            <script>
-                const roseSVG = `
-                <svg class="collab-rose-svg" viewBox="0 0 64 64" fill="none" xmlns="http://w3.org">
-                    <path d="M32 4C22 4 10 14 10 26C10 38 20 54 32 60C44 54 54 38 54 26C54 14 42 4 32 4Z" fill="#b80710"/>
-                    <path d="M32 10C26 10 16 18 16 26C16 34 24 46 32 52C40 46 48 34 48 26C48 18 38 10 32 10Z" fill="#e50914"/>
-                    <path d="M32 18C28 18 22 22 22 28C22 34 28 42 32 46C36 42 42 34 42 28C42 22 36 18 32 18Z" fill="#ff2e3b"/>
-                    <path d="M32 24C30 24 27 26 27 29C27 32 30 36 32 38C34 36 37 32 37 29C37 26 34 24 32 24Z" fill="#ffffff" opacity="0.8"/>
-                    <path d="M32 27C31 27 30 28 30 29C30 30 31 32 32 33C33 32 34 30 34 29C34 28 33 27 32 27Z" fill="#ffccd0"/>
-                </svg>`;
-                
-                const companies = [
-                    "Ом Шанти", "Пермские сласти", "TOYOSU", "LOFT HALL",
-                    "АудиоМания", "Sony Centre", "SoundProLab", "РентаФото",
-                    "Республика", "Кантата", "Урал Гидропоника", "Сорнякофф",
-                    "Кинг Бонг", "M5 GYM", "АПвет", "Oil & Vinegar"
-                ];
+            <!-- Карточка 1 -->
+            <div class="collab-card">
+                <img src="images/omshanti.jpg" alt="Ом Шанти" class="collab-img">
+                <div class="collab-title">Ом Шанти</div>
+                <svg class="collab-rose-svg" viewBox="0 0 64 64" fill="none" xmlns="http://w3.org"><path d="M32 4C22 4 10 14 10 26C10 38 20 54 32 60C44 54 54 38 54 26C54 14 42 4 32 4Z" fill="#b80710"/><path d="M32 10C26 10 16 18 16 26C16 34 24 46 32 52C40 46 48 34 48 26C48 18 38 10 32 10Z" fill="#e50914"/><path d="M32 18C28 18 22 22 22 28C22 34 28 42 32 46C36 42 42 34 42 28C42 22 36 18 32 18Z" fill="#ff2e3b"/><path d="M32 24C30 24 27 26 27 29C27 32 30 36 32 38C34 36 37 32 37 29C37 26 34 24 32 24Z" fill="#ffffff" opacity="0.8"/><path d="M32 27C31 27 30 28 30 29C30 30 31 32 32 33C33 32 34 30 34 29C34 28 33 27 32 27Z" fill="#ffccd0"/></svg>
+            </div>
 
-                // Автоматически генерируем карточки, чтобы не раздувать файл
-                companies.forEach(name => {
-                    document.write(`
-                        <div class="collab-card">
-                            <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                            <div class="collab-title">\${name}</div>
-                            \${roseSVG}
-                        </div>
-                    `);
-                });
-            </script>
+            <!-- Карточка 2 -->
+            <div class="collab-card">
+                <img src="images/permskie.jpg" alt="Пермские сласти" class="collab-img">
+                <div class="collab-title">Пермские сласти</div>
+                <svg class="collab-rose-svg" viewBox="0 0 64 64" fill="none" xmlns="http://w3.org"><path d="M32 4C22 4 10 14 10 26C10 38 20 54 32 60C44 54 54 38 54 26C54 14 42 4 32 4Z" fill="#b80710"/><path d="M32 10C26 10 16 18 16 26C16 34 24 46 32 52C40 46 48 34 48 26C48 18 38 10 32 10Z" fill="#e50914"/><path d="M32 18C28 18 22 22 22 28C22 34 28 42 32 46C36 42 42 34 42 28C42 22 36 18 32 18Z" fill="#ff2e3b"/><path d="M32 24C30 24 27 26 27 29C27 32 30 36 32 38C34 36 37 32 37 29C37 26 34 24 32 24Z" fill="#ffffff" opacity="0.8"/><path d="M32 27C31 27 30 28 30 29C30 30 31 32 32 33C33 32 34 30 34 29C34 28 33 27 32 27Z" fill="#ffccd0"/></svg>
+            </div>
 
-        </div>
-    </div>
+            <!-- Карточка 3 -->
+            <div class="collab-card">
+                <img src="images/toyosu.jpg" alt="TOYOSU" class="collab-img">
+                <div class="collab-title">TOYOSU</div>
+                <svg class="collab-rose-svg" viewBox="0 0 64 64" fill="none" xmlns="http://w3.org"><path d="M32 4C22 4 10 14 10 26C10 38 20 54 32 60C44 54 54 38 54 26C54 14 42 4 32 4Z" fill="#b80710"/><path d="M32 10C26 10 16 18 16 26C16 34 24 46 32 52C40 46 48 34 48 26C48 18 38 10 32 10Z" fill="#e50914"/><path d="M32 18C28 18 22 22 22 28C22 34 28 42 32 46C36 42 42 34 42 28C42 22 36 18 32 18Z" fill="#ff2e3b"/><path d="M32 24C30 24 27 26 27 29C27 32 30 36 32 38C34 36 37 32 37 29C37 26 34 24 32 24Z" fill="#ffffff" opacity="0.8"/><path d="M32 27C31 27 30 28 30 29C30 30 31 32 32 33C33 32 34 30 34 29C34 28 33 27 32 27Z" fill="#ffccd0"/></svg>
+            </div>
 
-</body>
-</html>
+            <!-- Карточка 4 -->
+            <div class="collab-card">
+                <img src="images/lofthall.jpg" alt="LOFT HALL" class="collab-img">
+                <div class="collab-title">LOFT HALL</div>
+                <svg class="collab-rose-svg" viewBox="0 0 64 64" fill="none" xmlns="http://w3.org"><path d="M32 4C22 4 10 14 10 26C10 38 20 54 32 60C44 54 54 38 54 26C54 14 42 4 32 4Z" fill="#b80710"/><path d="M32 10C26 10 16 18 16 26C16 34 24 46 32 52C40 46 48 34 48 26C48 18 38 10 32 10Z" fill="#e50914"/><path d="M32 18C28 18 22 22 22 28C22 34 28 42 32 46C36 42 42 34 42 28C42 22 36 18 32 18Z" fill="#ff2e3b"/><path d="M32 24C30 24 27 26 27 29C27 32 30 36 32 38C34 36 37 32 37 29C37 26 34 24 32 24Z" fill="#ffffff" opacity="0.8"/><path d="M32 27C31 27 30 28 30 29C30 30 31 32 32 33C33 32 34 30 34 29C34 28 33 27 32 27Z" fill="#ffccd0"/></svg>
+            </div>
+
+            <!-- Карточка 5 -->
+            <div class="collab-card">
+                <img src="images/audiomania.jpg" alt="АудиоМания" class="collab-img">
+                <div class="collab-title">АудиоМания</div>
+                <svg class="collab-rose-svg" viewBox="0 0 64 64" fill="none" xmlns="http://w3.org"><path d="M32 4C22 4 10 14 10 26C10 38 20 54 32 60C44 54 54 38 54 26C54 14 42 4 32 4Z" fill="#b80710"/><path d="M32 10C26 10 16 18 16 26C16 34 24 46 32 52C40 46 48 34 48 26C48 18 38 10 32 10Z" fill="#e50914"/><path d="M32 18C28 18 22 22 22 28C22 34 28 42 32 46C36 42 42 34 42 28C42 22 36 18 32 18Z" fill="#ff2e3b"/><path d="M32 24C30 24 27 26 27 29C27 32 30 36 32 38C34 36 37 32 37 29C37 26 34 24 32 24Z" fill="#ffffff" opacity="0.8"/><path d="M32 27C31 27 30 28 30 29C30 30 31 32 32 33C33 32 34 30 34 29C34 28 33 27 32 27Z" fill="#ffccd0"/></svg>
+            </div>
+
+            <!-- Карточка 6 -->
+            <div class="collab-card">
+                <img src="images/sony.jpg" alt="Sony Centre" class="collab-img">
