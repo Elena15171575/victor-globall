@@ -39,7 +39,7 @@
         </div>
     </header>
 
-    <!-- БЛОК С АНИМИРОВАННЫМИ КАРТОЧКАМИ -->
+   <!-- БЛОК С АНИМИРОВАННЫМИ КАРТОЧКАМИ -->
     <div style="background-color: #000000; padding: 80px 20px 120px 20px; width: 100%; box-sizing: border-box; clear: both;">
         
         <h2 style="
@@ -61,14 +61,16 @@
                 to { transform: translateY(0) scale(1) rotate(360deg); }
             }
 
+            /* ШИРИНА КАРТОЧЕК: увеличили до 340px, чтобы они стали крупными */
             .collab-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
                 gap: 30px;
                 max-width: 1200px;
                 margin: 0 auto;
             }
 
+            /* ВЫСОТА КАРТОЧЕК: сделали строго 360px, чтобы все карточки стояли по линеечке */
             .collab-card {
                 background-color: #000000; 
                 border: 1px solid #222222; 
@@ -80,7 +82,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-between;
-                min-height: 270px;
+                height: 360px;
                 transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
                 position: relative;
                 box-sizing: border-box;
@@ -99,6 +101,7 @@
                 font-weight: 500;
                 text-transform: uppercase;
                 letter-spacing: 0.1em;
+                margin-top: 15px;
                 margin-bottom: 12px;
                 transition: color 0.4s ease;
             }
@@ -121,18 +124,21 @@
                 animation: card-rose-spin 12s linear infinite;
             }
 
+            /* РАЗМЕР И ВИД КАРТИНКИ: увеличили высоту до 180px, добавили белый фон и отступы */
             .collab-img {
                 width: 100%; 
-                height: 120px; 
-                object-fit: cover; 
+                height: 180px; 
+                object-fit: contain; 
                 border-radius: 4px; 
-                margin-bottom: 20px;
-                border: 1px dashed #333333;
-                background-color: #050505;
+                padding: 15px;
+                border: 1px solid #111111;
+                background-color: #ffffff;
+                box-sizing: border-box;
             }
         </style>
 
         <div class="collab-grid">
+
             
             <!-- Векторная роза бутоном вверх -->
             <svg id="rose-def" style="display:none;"><g id="rose-shape"><path d="M32 4C22 4 10 14 10 26C10 38 20 54 32 60C44 54 54 38 54 26C54 14 42 4 32 4Z" fill="#b80710"/><path d="M32 10C26 10 16 18 16 26C16 34 24 46 32 52C40 46 48 34 48 26C48 18 38 10 32 10Z" fill="#e50914"/><path d="M32 18C28 18 22 22 22 28C22 34 28 42 32 46C36 42 42 34 42 28C42 22 36 18 32 18Z" fill="#ff2e3b"/><path d="M32 24C30 24 27 26 27 29C27 32 30 36 32 38C34 36 37 32 37 29C37 26 34 24 32 24Z" fill="#ffffff" opacity="0.8"/><path d="M32 27C31 27 30 28 30 29C30 30 31 32 32 33C33 32 34 30 34 29C34 28 33 27 32 27Z" fill="#ffccd0"/></g></svg>
