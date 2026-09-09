@@ -64,6 +64,11 @@
         </h2>
 
         <style>
+            @keyframes card-rose-spin {
+                from { transform: translateY(10px) scale(0.6) rotate(0deg); }
+                to { transform: translateY(0) scale(1) rotate(360deg); }
+            }
+
             .collab-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -73,7 +78,7 @@
             }
 
             .collab-card {
-                background-color: #0b0c0d; 
+                background-color: #000000; 
                 border: 1px solid #222222; 
                 border-radius: 6px;
                 padding: 24px;
@@ -83,7 +88,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-between;
-                min-height: 260px;
+                min-height: 270px;
                 transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
                 position: relative;
                 box-sizing: border-box;
@@ -92,7 +97,7 @@
             .collab-photo-placeholder {
                 width: 100%;
                 height: 120px;
-                background-color: #121315; 
+                background-color: #050505; 
                 border: 1px dashed #333333;
                 border-radius: 4px;
                 display: flex;
@@ -114,16 +119,17 @@
                 font-weight: 500;
                 text-transform: uppercase;
                 letter-spacing: 0.1em;
-                margin-bottom: 10px;
+                margin-bottom: 12px;
                 transition: color 0.4s ease;
             }
 
-            .collab-rose {
-                font-size: 20px;
+            /* Контейнер для вращающейся розы изначального вида */
+            .collab-rose-svg {
+                width: 32px;
+                height: 32px;
                 opacity: 0;
                 transform: translateY(10px) scale(0.6);
-                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                line-height: 1;
+                transition: opacity 0.4s ease, transform 0.4s ease;
             }
 
             /* Эффекты при наведении */
@@ -131,7 +137,6 @@
                 transform: translateY(-8px); 
                 border-color: #e50914; 
                 box-shadow: 0 10px 25px rgba(229, 9, 20, 0.15); 
-                background-color: #0e0203; 
             }
 
             .collab-card:hover .collab-photo-placeholder {
@@ -143,102 +148,49 @@
                 color: #ff2e3b; 
             }
 
-            .collab-card:hover .collab-rose {
+            /* Роза плавно появляется и начинает бесконечно крутиться по кругу */
+            .collab-card:hover .collab-rose-svg {
                 opacity: 1; 
-                transform: translateY(0) scale(1) rotate(15deg); 
+                transform: translateY(0) scale(1);
+                animation: card-rose-spin 12s linear infinite;
             }
         </style>
 
+        <!-- МАКЕТ СЕТКИ С ВЕКТОРНЫМИ РОЗАМИ ВНУТРИ -->
         <div class="collab-grid">
             
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">Ом Шанти</div>
-                <div class="collab-rose">🌹</div>
-            </div>
+            <!-- Шаблон макроса для SVG розы, встроенный во все 16 карточек -->
+            <script>
+                const roseSVG = `
+                <svg class="collab-rose-svg" viewBox="0 0 64 64" fill="none" xmlns="http://w3.org">
+                    <path d="M32 4C22 4 10 14 10 26C10 38 20 54 32 60C44 54 54 38 54 26C54 14 42 4 32 4Z" fill="#b80710"/>
+                    <path d="M32 10C26 10 16 18 16 26C16 34 24 46 32 52C40 46 48 34 48 26C48 18 38 10 32 10Z" fill="#e50914"/>
+                    <path d="M32 18C28 18 22 22 22 28C22 34 28 42 32 46C36 42 42 34 42 28C42 22 36 18 32 18Z" fill="#ff2e3b"/>
+                    <path d="M32 24C30 24 27 26 27 29C27 32 30 36 32 38C34 36 37 32 37 29C37 26 34 24 32 24Z" fill="#ffffff" opacity="0.8"/>
+                    <path d="M32 27C31 27 30 28 30 29C30 30 31 32 32 33C33 32 34 30 34 29C34 28 33 27 32 27Z" fill="#ffccd0"/>
+                </svg>`;
+                
+                const companies = [
+                    "Ом Шанти", "Пермские сласти", "TOYOSU", "LOFT HALL",
+                    "АудиоМания", "Sony Centre", "SoundProLab", "РентаФото",
+                    "Республика", "Кантата", "Урал Гидропоника", "Сорнякофф",
+                    "Кинг Бонг", "M5 GYM", "АПвет", "Oil & Vinegar"
+                ];
 
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">Пермские сласти</div>
-                <div class="collab-rose">🌹</div>
-            </div>
+                // Автоматически генерируем карточки, чтобы не раздувать файл
+                companies.forEach(name => {
+                    document.write(`
+                        <div class="collab-card">
+                            <div class="collab-photo-placeholder">[ Место для фото ]</div>
+                            <div class="collab-title">\${name}</div>
+                            \${roseSVG}
+                        </div>
+                    `);
+                });
+            </script>
 
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">TOYOSU</div>
-                <div class="collab-rose">🌹</div>
-            </div>
+        </div>
+    </div>
 
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">LOFT HALL</div>
-                <div class="collab-rose">🌹</div>
-            </div>
-
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">АудиоМания</div>
-                <div class="collab-rose">🌹</div>
-            </div>
-
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">Sony Centre</div>
-                <div class="collab-rose">🌹</div>
-            </div>
-
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">SoundProLab</div>
-                <div class="collab-rose">🌹</div>
-            </div>
-
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">РентаФото</div>
-                <div class="collab-rose">🌹</div>
-            </div>
-
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">Республика</div>
-                <div class="collab-rose">🌹</div>
-            </div>
-
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">Кантата</div>
-                <div class="collab-rose">🌹</div>
-            </div>
-
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">Урал Гидропоника</div>
-                <div class="collab-rose">🌹</div>
-            </div>
-
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">Сорнякофф</div>
-                <div class="collab-rose">🌹</div>
-            </div>
-
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">Кинг Бонг</div>
-                <div class="collab-rose">🌹</div>
-            </div>
-
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">M5 GYM</div>
-                <div class="collab-rose">🌹</div>
-            </div>
-
-            <div class="collab-card">
-                <div class="collab-photo-placeholder">[ Место для фото ]</div>
-                <div class="collab-title">АПвет</div>
-                <div class="collab-rose">🌹</div>
-            </div>
-
-            <div class="collab-card">
+</body>
+</html>
