@@ -10,17 +10,18 @@
 </head>
 <body class="t-body" style="margin:0; background-color: #000000;">
 
-    <!-- ШАПКА / НАВИГАЦИОННОЕ МЕНЮ САЙТА -->
-        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;">
-            <a href="https://victorgloball-photo.tilda.ws" target="_blank" style="
-                color: #ffffff; 
-                text-decoration: none; /* Убираем подчеркивание */
-                transition: color 0.3s ease; /* Плавность */
-            " onmouseover="this.style.color='#ff2e3b';" onmouseout="this.style.color='#ffffff';">
-                VG WEB SITE ➔
-            </a>
-        </div>
-    
+     <!-- ШАПКА / НАВИГАЦИОННОЕ МЕНЮ САЙТА (ИСПРАВЛЕННОЕ) -->
+    <header style="background-color: #000000; padding: 25px 20px; border-bottom: 1px solid #111111; clear: both;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            
+            <!-- Логотип-ссылка (слева) -->
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;">
+                <a href="https://victorgloball-photo.tilda.ws" target="_blank" style="color: #ffffff; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#ff2e3b';" onmouseout="this.style.color='#ffffff';">
+                    VG WEB SITE 
+                </a>
+            </div>
+
+            <!-- Навигационное меню (справа) -->
             <nav style="display: flex; gap: 24px; flex-wrap: wrap;">
                 <style>
                     .nav-menu-link {
@@ -38,11 +39,14 @@
                 <a href="/victor-globall/" class="nav-menu-link">Главная</a>
                 <a href="art.html" class="nav-menu-link">Арт</a>
                 <a href="gallery.html" class="nav-menu-link">Галерея</a>
-                <a href="collab.html" class="nav-menu-link active">Коллаборации</a>
+                <a href="collab.html" class="nav-menu-link">Коллаборации</a>
+                <a href="education.html" class="nav-menu-link active">Обучение</a>
                 <a href="contacts.html" class="nav-menu-link">Контакты</a>
             </nav>
+
         </div>
-    </header>
+        </header>
+
 
    <!-- БЛОК С АНИМИРОВАННЫМИ КАРТОЧКАМИ -->
     <div style="background-color: #000000; padding: 80px 20px 120px 20px; width: 100%; box-sizing: border-box; clear: both;">
