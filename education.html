@@ -40,11 +40,20 @@
 <body class="t-body" style="margin:0; background-color: #000000;"> 
 
     <!-- ШАПКА / НАВИГАЦИОННОЕ МЕНЮ САЙТА -->
-    <header style="background-color: #000000; padding: 25px 20px; border-bottom: 1px solid #111111; clear: both;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-            <div style="color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;">
-                VG WEB SITE
-            </div>
+            <!-- 🌟 ТЕПЕРЬ НАДПИСЬ ПРЕВРАТИЛАСЬ В СТИЛЬНУЮ ССЫЛКУ-КНОПКУ -->
+        <a href="https://victorgloball-photo.tilda.ws" target="_blank" style="
+            color: #ffffff; 
+            text-decoration: none; /* Убираем синее подчеркивание */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            font-size: 16px; 
+            font-weight: 600; 
+            letter-spacing: 0.15em; 
+            text-transform: uppercase;
+            transition: color 0.3s ease; /* Плавное загорание */
+        " onmouseover="this.style.color='#ff2e3b';" onmouseout="this.style.color='#ffffff';">
+            VG WEB SITE ➔
+        </a>
+
             <nav style="display: flex; gap: 24px; flex-wrap: wrap;">
                 <style>
                     .nav-menu-link {
