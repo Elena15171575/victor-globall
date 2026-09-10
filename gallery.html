@@ -714,8 +714,34 @@ fallingCoin.position.set(
 
   renderer.domElement.style.cursor = 'pointer';
   renderer.domElement.addEventListener('click', spawnCoinsRain);
-</script> <!-- nominify end --> </div> </div> </div> </div> </div> <!--/allrecords-->
-  <div><!-- КНОПКА НА СТРАНИЦУ ОБУЧЕНИЯ (ТЕКСТ СЛЕВА, КРАСНАЯ РОЗА СПРАВА ВНУТРИ) -->
+</script> <!-- nominify end --> </div> </div> </div>  <!--/allrecords-->
+   <!-- НАЧАЛО БЛОКА: НЕОНОВАЯ ЗЕЛЕНАЯ КНОПКА С КРАСНОЙ РОЗОЙ ВНИЗУ ГАЛЕРЕИ -->
+<div style="
+    background-color: #000000; /* Глубокий черный фон для защиты от белых полос */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0 100px 0; /* Отступы, чтобы кнопка не прилипала */
+    margin: 0;
+    clear: both;
+    box-sizing: border-box;
+">
+    <style>
+        @keyframes slow-spin-gallery {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .spinning-rose-gallery {
+            width: 32px;  /* Размер розы около 3 см */
+            height: 32px;
+            display: inline-block;
+            animation: slow-spin-gallery 12s linear infinite; /* Плавное медленное вращение */
+            flex-shrink: 0;
+        }
+    </style>
+
+    <!-- КНОПКА НА СТРАНИЦУ ОБУЧЕНИЯ (ТЕКСТ СЛЕВА, КРАСНАЯ РОЗА СПРАВА ВНУТРИ) -->
     <a href="education.html" style="
         display: inline-flex;
         align-items: center;
@@ -751,4 +777,3 @@ fallingCoin.position.set(
     </a>
 </div>
 <!-- КОНЕЦ БЛОКА -->
-
