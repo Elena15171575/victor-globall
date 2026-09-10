@@ -715,3 +715,66 @@ fallingCoin.position.set(
   renderer.domElement.style.cursor = 'pointer';
   renderer.domElement.addEventListener('click', spawnCoinsRain);
 </script> <!-- nominify end --> </div> </div> </div> </div> </div> <!--/allrecords-->
+  <!-- НАЧАЛО БЛОКА: НЕОНОВАЯ ЗЕЛЕНАЯ КНОПКА С КРАСНОЙ РОЗОЙ ВНИЗУ ГАЛЕРЕИ -->
+<div style="
+    background-color: #000000; /* Глубокий черный фон для защиты от белых полос */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0 100px 0; /* Отступы, чтобы кнопка не прилипала */
+    margin: 0;
+    clear: both;
+    box-sizing: border-box;
+">
+    <style>
+        @keyframes slow-spin-gallery {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .spinning-rose-gallery {
+            width: 32px;  /* Размер розы около 3 см */
+            height: 32px;
+            display: inline-block;
+            animation: slow-spin-gallery 12s linear infinite; /* Плавное медленное вращение */
+            flex-shrink: 0;
+        }
+    </style>
+
+    <!-- КНОПКА НА СТРАНИЦУ ОБУЧЕНИЯ (ТЕКСТ СЛЕВА, КРАСНАЯ РОЗА СПРАВА ВНУТРИ) -->
+    <a href="education.html" style="
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px; /* Расстояние между текстом и розой */
+        background-color: #000000; /* Чёрный фон кнопки */
+        color: #ffffff;
+        border: 2px solid #00ff66; /* Ярко-неоновая зеленая обводка */
+        text-decoration: none;
+        padding: 18px 46px;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+        font-weight: 600;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 255, 102, 0.1); /* Легкое базовое свечение неона */
+    " onmouseover="this.style.backgroundColor='#00ff66'; this.style.color='#000000'; this.style.boxShadow='0 0 25px rgba(0, 255, 102, 0.6)';" 
+       onmouseout="this.style.backgroundColor='#000000'; this.style.color='#ffffff'; this.style.boxShadow='0 0 10px rgba(0, 255, 102, 0.1)';">
+        
+        <!-- Текст слева -->
+        <span>Обучение</span>
+        
+        <!-- Красная роза вид сверху справа внутри кнопки -->
+        <svg class="spinning-rose-gallery" viewBox="0 0 64 64" fill="none" xmlns="http://w3.org">
+            <path d="M32 4C22 4 10 14 10 26C10 38 20 54 32 60C44 54 54 38 54 26C54 14 42 4 32 4Z" fill="#b80710"/>
+            <path d="M32 10C26 10 16 18 16 26C16 34 24 46 32 52C40 46 48 34 48 26C48 18 38 10 32 10Z" fill="#e50914"/>
+            <path d="M32 18C28 18 22 22 22 28C22 34 28 42 32 46C36 42 42 34 42 28C42 22 36 18 32 18Z" fill="#ff2e3b"/>
+            <path d="M32 24C30 24 27 26 27 29C27 32 30 36 32 38C34 36 37 32 37 29C37 26 34 24 32 24Z" fill="#ffffff" opacity="0.8"/>
+            <path d="M32 27C31 27 30 28 30 29C30 30 31 32 32 33C33 32 34 30 34 29C34 28 33 27 32 27Z" fill="#ffccd0"/>
+        </svg>
+    </a>
+</div>
+<!-- КОНЕЦ БЛОКА -->
+
