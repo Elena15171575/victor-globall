@@ -1,13 +1,27 @@
-User-Agent: *
-Disallow: /tilda/form*
-Disallow: /tilda/rec*
-Disallow: /tilda/click*
-Disallow: /tilda/scroll*
-Disallow: /tilda/popup*
-Disallow: /tilda/cart*
-Disallow: /tilda/product*
-Disallow: /tilda/event*
-Disallow:
+# Инструкция для всех поисковых роботов (Google, Яндекс и др.)
+User-agent: *
 
+# Запрещаем роботам заходить на служебные и технические страницы
+Disallow: /404.html
+Disallow: /cookie.html
+Disallow: /oferta.html
 
-Sitemap: http://vgsitevic.tilda.ws/sitemap.xml
+# Разрешаем индексировать все главные творческие разделы сайта
+Allow: /
+Allow: /index.html
+Allow: /art.html
+Allow: /gallery.html
+Allow: /collab.html
+Allow: /education.html
+Allow: /production.html
+Allow: /about.html
+Allow: /contacts.html
+
+# Открываем папки с картинками и стилями, чтобы сайт правильно сканировался
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Указываем точную карту сайта для быстрого обхода роботами
+Sitemap:https: //elena15171575.github.io/victor-globall
+
